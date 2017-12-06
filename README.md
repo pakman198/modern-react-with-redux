@@ -1,2 +1,2 @@
 # modern-react-with-redux
-Moder React With Redux tutorial from Udemy
+Modern React With Redux tutorial from Udemy
