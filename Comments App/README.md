@@ -1,3 +1,9 @@
+# Comments App
+
+This app's purpose is to show how JSX works with React, the structure of functional components,
+how props can be passed from a parent to a child component and how you can reuse a component
+to display different data by using the `{ props.children }` inside the JSX.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
