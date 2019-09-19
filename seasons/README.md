@@ -1,3 +1,11 @@
+#Seasons App
+
+In this app we use the geolocation API to get a user location and display a message depending if
+the user is on winter time or summer time.
+
+Introduced class components, state, lifecycle methods, default props and helper functions.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
