@@ -1,3 +1,12 @@
+# Image Grid App
+
+In this app I created an image grid using unsplash API to get images after user input.
+The app basically has a search bar where the user types a word, to find images that match that word.
+Introduced the usage of react refs, to reference DOM elements.
+Implemented CSS grids to create the grid on the screen. Used the ref to get the image height and 
+define the space each image used on the screen by passing inline styles to the component, causing 
+a masonry effect where images are sorted one after the other with pretty much the same space around them.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
