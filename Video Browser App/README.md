@@ -1,3 +1,9 @@
+# Video Browser App
+
+Simple replica of Youtube app using Youtube Data API to be able to search videos from Youtube.
+Handle the state on App component and pass event handlers to child components to update the root state.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
