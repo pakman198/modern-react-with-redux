@@ -11,7 +11,7 @@ class SearchBar extends Component {
 
     const { term } = this.state;
 
-    this.props.onSubmit(term);
+    this.props.onFormSubmit(term);
   }
 
   onInputChange = (e) => {
