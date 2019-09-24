@@ -1,3 +1,24 @@
+# Songs App
+
+In this app the main purpose is to see how redux works inside react applications.
+A list of songs is displayed and the user can click on one and display its data on the 
+right side of the screen.
+
+There's only one action which gets dispatched when the user selects a song and updates the
+whole state of the application.
+There's two reducers, one that had the initial list of songs, and the other that handles the
+selected song action.
+
+To make redux work with react a `Provider` is needed at the root of the app, that will work
+as a wrapper for the root component and expects a store property which is created using the
+`createStore` function from redux, which alse expects all the reducers, that were previously merged
+together using the `combineReducers` method.
+
+Each reducer indicates a property of the state, so whenever you wat to access a property inside a
+component, you need to make use of the react-redux `connect` function, which exposes the state of the 
+app as declared initially on the store.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
