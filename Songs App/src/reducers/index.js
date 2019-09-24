@@ -17,6 +17,13 @@ const selectedSongReducer = (selectedSong = null, action) => {
   return selectedSong;
 }
 
+// the keys on this object define the properties on the app state:
+
+//  state = {
+//    songs: [], 
+//    selectedSong: null
+//  }
+
 export default combineReducers({
   songs: songsReducer,
   selectedSong: selectedSongReducer
