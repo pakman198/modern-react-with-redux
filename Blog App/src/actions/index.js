@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import jsonPlaceholder from '../apis/jsonPlaceholder';
 
 export const fetchPosts = () => {
@@ -20,4 +22,22 @@ export const fetchUser = (userId) => {
       payload: response.data
     });
   }
+}
+
+export const fetchPostsAndUsers = () => {
+  
+  return async (dispatch, getState) => {
+    await dispatch(fetchPosts());
+    const users = _.uniq(_.map(getState().posts, 'userId'));
+
+    users.forEach( userId => dispatch(fetchUser(userId)) );
+
+    // al syntax
+    /* _.chain(getState().posts)
+      .map('userId')
+      .uniq()
+      .forEach( userId => dispatch(fetchUser(userId)) )
+      .value(); */
+  }
+
 }
