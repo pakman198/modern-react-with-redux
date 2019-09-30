@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { signIn, signOut } from '../actions';
 
 class GoogleAuth extends Component {
   auth = {};
@@ -13,16 +16,20 @@ class GoogleAuth extends Component {
         scope: 'email'
       }).then(() => {
         this.auth = window.gapi.auth2.getAuthInstance();
-        this.onAuthChange();
+
+        this.onAuthChange(this.auth.isSignedIn.get());
         this.auth.isSignedIn.listen(this.onAuthChange);
       });
     });
   }
 
-  onAuthChange = () => {
-    this.setState({
-      isSignedIn: this.auth.isSignedIn.get()
-    })
+  onAuthChange = (isSignedIn) => {
+    if(isSignedIn) {
+      const user = this.auth.currentUser.get().getId();
+      this.props.signIn(user);
+    } else {
+      this.props.signOut();
+    }
   }
 
   onSignInClick = () => {
@@ -34,7 +41,7 @@ class GoogleAuth extends Component {
   }
 
   renderAuthButton() {
-    const { isSignedIn } = this.state;
+    const { isSignedIn } = this.props;
 
     if ( isSignedIn === null ) {
       return null;
@@ -62,4 +69,10 @@ class GoogleAuth extends Component {
   }
 }
 
-export default GoogleAuth;
+const mapStateToProps = (state) => {
+  return {
+    isSignedIn: state.auth.isSignedIn
+  }
+}
+
+export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
