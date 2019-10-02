@@ -1,3 +1,12 @@
+# Streams App
+In this app I created a typical CRUD application using React, Redux and Redux Forms.
+I created a server using `json-server` to work as a REST API.
+
+The goal was to create a streaming app, but I just focused on the CRUD operations so I didn't add that streaming functionality since I had to add a new server and install more dependencies.
+
+The lesson learned here was to see how redux works in bigger applications, 
+Implemented *ReduxForms* as a better way of handling forms in an application. They work quite similar to *Angular Reactive Forms*.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
