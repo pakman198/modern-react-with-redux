@@ -17,7 +17,7 @@ class StreamList extends Component {
           {this.renderActions(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
-            {stream.title}
+            <Link to={`/streams/${stream.id}`} className="header">{stream.title}</Link>
             <div className="description">{ stream.description }</div>
           </div>
         </div>
@@ -43,7 +43,7 @@ class StreamList extends Component {
     }
   }
 
-  renderCreate() {
+  renderCreateButton() {
     if(this.props.isSignedIn) {
       return (
         <div style={{ "textAlign": "right" }}>
@@ -62,7 +62,7 @@ class StreamList extends Component {
         <div className="ui celled list">
           { this.renderList() }
         </div>
-        { this.renderCreate() }
+        { this.renderCreateButton() }
       </div>
     );
   }
