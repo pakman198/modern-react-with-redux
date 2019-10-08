@@ -1,3 +1,7 @@
+# Translate App
+
+Basic app for working with React Context.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
